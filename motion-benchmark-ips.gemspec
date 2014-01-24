@@ -8,7 +8,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["watson1978@gmail.com"]
   spec.description   = %q{Provides iteration per second benchmarking for RubyMotion}
   spec.summary       = %q{Provides iteration per second benchmarking for RubyMotion}
-  spec.homepage      = ""
+  spec.homepage      = "https://github.com/Watson1978/motion-benchmark-ips"
   spec.license       = "MIT"
 
   files = []
