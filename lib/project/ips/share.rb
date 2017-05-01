@@ -1,7 +1,3 @@
-require 'net/http'
-require 'net/https'
-require 'json'
-
 module Benchmark
   module IPS
     class Share
