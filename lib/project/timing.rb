@@ -43,23 +43,24 @@ module Benchmark
 
     # Use a monotonic clock if available, otherwise use Time
     begin
-      Process.clock_gettime Process::CLOCK_MONOTONIC, :float_microsecond
+    ## RubyMotion has not supported Process.clock_gettime
+    #   Process.clock_gettime Process::CLOCK_MONOTONIC, :float_microsecond
 
-      # Get an object that represents now and can be converted to microseconds
-      def self.now
-        Process.clock_gettime Process::CLOCK_MONOTONIC, :float_microsecond
-      end
+    #   # Get an object that represents now and can be converted to microseconds
+    #   def self.now
+    #     Process.clock_gettime Process::CLOCK_MONOTONIC, :float_microsecond
+    #   end
 
-      # Add one second to the time represenetation
-      def self.add_second(t, s)
-        t + (s * MICROSECONDS_PER_SECOND)
-      end
+    #   # Add one second to the time represenetation
+    #   def self.add_second(t, s)
+    #     t + (s * MICROSECONDS_PER_SECOND)
+    #   end
 
-      # Return the number of microseconds between the 2 moments
-      def self.time_us(before, after)
-        after - before
-      end
-    rescue NameError
+    #   # Return the number of microseconds between the 2 moments
+    #   def self.time_us(before, after)
+    #     after - before
+    #   end
+    # rescue NameError
       # Get an object that represents now and can be converted to microseconds
       def self.now
         Time.now
